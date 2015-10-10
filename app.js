@@ -1,11 +1,15 @@
-var express = require("express")();
-var http = require('http').Server(express);
-var io = require('socket.io')(http);
+var express = require("express"),
+    http = require('http'),
+    io = require('socket.io');
 
-express.get('/', function (req, res) {
+var app = express();
+    server = http.Server(app),
+    socket = io(http);
+
+app.get('/', function (req, res) {
   res.send("Server is up");
 });
 
-http.listen(3000, function(){
+server.listen(3000, function(){
     console.log("Server started");
 });
