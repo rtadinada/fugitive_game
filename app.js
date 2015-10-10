@@ -2,7 +2,7 @@ var express = require("express"),
     http = require('http'),
     io = require('socket.io');
 
-var app = express();
+var app = express(),
     server = http.Server(app),
     socket = io(server);
 
