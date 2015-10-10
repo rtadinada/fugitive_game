@@ -1,0 +1,24 @@
+{
+  "name": "fugitive_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtadinada/fugitive_game.git"
+  },
+  "author": "Ravi Tadinada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rtadinada/fugitive_game/issues"
+  },
+  "homepage": "https://github.com/rtadinada/fugitive_game#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongodb": "^2.0.45",
+    "socket.io": "^1.3.7"
+  }
+}
