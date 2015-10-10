@@ -17,16 +17,16 @@ Client emissions:
 	- "join room"
 		Args - String:room_name, String:player_name
 		Joins the room specified by room name.
-	- "class selection"
-		Args - Int:class
-		Chooses the selected class (default -1, 0 for robber, 1 for cop)
-	- "class locked"
+	- "team selection"
+		Args - Int:team
+		Chooses the selected team (default -1, 0 for robber, 1 for cop)
+	- "team locked"
 		Args - NONE
-		Locks in the player class selection
+		Locks in the player team selection
 
 Server emissions:
 	- "player update"
-		Args - String:player_name, Int:class, Int:ready_status
+		Args - String:player_name, Int:team, Int:ready_status
 		Notifies client about an update in the character selection process for player player_name
 	- "start select locations"
 		Args - String:selector_player
