@@ -1,0 +1,54 @@
+REST SHIT:
+
+POST /create_game
+	Payload:
+		{
+			"name": NAME,
+			"time": GAME_TIME
+		}
+	Returns 1 on success, 0 on failure
+
+
+SOCKET SHIT:
+
+Stage 1: Joining a room
+
+Client emissions:
+	- "join room"
+		Args - String:room_name, String:player_name
+		Joins the room specified by room name.
+	- "class selection"
+		Args - Int:class
+		Chooses the selected class (default -1, 0 for robber, 1 for cop)
+	- "class locked"
+		Args - NONE
+		Locks in the player class selection
+
+Server emissions:
+	- "player update"
+		Args - String:player_name, Int:class, Int:ready_status
+		Notifies client about an update in the character selection process for player player_name
+	- "start select locations"
+		Args - String:selector_player
+		Notifies client to move on to the location selection. If client name is the same as selector_player, client selects the start and goal locations. Otherwise, client is treated to a lovely waiting screen.
+
+
+Stage 2: Location selection
+
+Client emission:
+	- "locations selected"
+		Args - Double:Lat1, Double:Lon1, Double:Lat2, Double:Lon2
+		Location selecting player sends the locations they so expertly selected.
+
+Server emissions:
+	- "move to start"
+		Args - NONE
+		Notifies clients to go to the move to start position phase.
+
+
+Stage 3: Ready to start
+
+Client emission:
+	- "ready to play"
+		Args - NONE
+		Client notifies server that they are in position and ready to start
