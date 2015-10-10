@@ -26,7 +26,7 @@ Client emissions:
 
 Server emissions:
 	- "player update"
-		Args - String:player_name, Int:team, Int:ready_status
+		Args - String:player_name, Int:team, Bool:ready_status
 		Notifies client about an update in the character selection process for player player_name
 	- "start select locations"
 		Args - String:selector_player
