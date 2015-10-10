@@ -53,5 +53,7 @@ Client emission:
 		Args - NONE
 		Client notifies server that they are in position and ready to start
 
-S3rv3r 3mission:
-	- 
+S3rv3r 3m1ss10n:
+	- "fuckin start already"
+		Args - Int:end_time
+		Server notifies clients to start the game and supplies the time at which the game is over if it hasn't ended yet. At the end period, cops automatically win. The robbers were pussies.
