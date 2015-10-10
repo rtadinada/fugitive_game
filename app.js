@@ -117,6 +117,11 @@ io.sockets.on('connect', function(socket){
       console.log('Player %s confirms team', player);
       team_locked(player, room);
     });
+
+    socket.on('locations selected', function(lat1, lon1, lat2, lon2) {
+      console.log('Robbers have selected start at (%f, %f) and end at (%f, %f)', lat1, lon1, lat2, lon2);
+      io.sockets.to(room).emit('move to start', lat1, lon1, lat2, lon2);
+    });
 });
 
 
@@ -125,7 +130,12 @@ app.post("/create_room", function (req, res) {
   var time = req.body.time;
 
   if(RoomsCollection != null) {
-    var room = {'name': name, 'time': time, 'players': []};
+    var room =
+      {
+        'name': name,
+        'time': time,
+        'players': []
+      };
     RoomsCollection.insert(room, {w:1}, function(err, result) {
       if(!err) {
         res.send('1');
