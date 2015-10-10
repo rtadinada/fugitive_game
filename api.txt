@@ -38,12 +38,12 @@ Stage 2: Location selection
 Client emission:
 	- "locations selected"
 		Args - Double:Lat1, Double:Lon1, Double:Lat2, Double:Lon2
-		Location selecting player sends the locations they so expertly selected.
+		Location selecting player sends the locations they so expertly selected. start: (Lat1, Lon1); end: (Lat2, Lon2)
 
 Server emissions:
 	- "move to start"
-		Args - NONE
-		Notifies clients to go to the move to start position phase.
+		Args - Double:Lat1, Double:Lon1, Double:Lat2, Double:Lon2
+		Notifies clients to go to the move to start position phase. start: (Lat1, Lon1); end: (Lat2, Lon2)
 
 
 Stage 3: Ready to start
@@ -52,3 +52,6 @@ Client emission:
 	- "ready to play"
 		Args - NONE
 		Client notifies server that they are in position and ready to start
+
+S3rv3r 3mission:
+	- 
